@@ -1,0 +1,11 @@
+simulName Liris
+nbPeers 16
+nbQueries 1
+degree 3
+ttl 6
+topology Random
+dynamicNetwork false
+experimentByCycle true
+nbCycles 12
+protocols Q_P_with_K
+network.node fr.cnrs.liris.simtole.node.SemanticNodeAvecInstances

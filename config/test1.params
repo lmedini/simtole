@@ -1,0 +1,10 @@
+simulName test1
+nbPeers 19
+nbQueries 0
+degree 4
+ttl 5
+topology Random
+dynamicNetwork false
+experimentByCycle true
+nbCycles 6
+protocols list_protocol

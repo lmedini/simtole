@@ -1,0 +1,57 @@
+protocol.lnk peersim.core.IdleProtocol
+
+protocol.queryqueue fr.cnrs.liris.simtole.protocols.QueryQueueManagementProtocol
+
+protocol.query fr.cnrs.liris.simtole.protocols.SemQueryProtocol
+protocol.query.queryqueue_protocol queryqueue
+protocol.query.result_protocol result
+protocol.query.info_protocol infoLocal
+protocol.query.linkable lnk
+
+protocol.need fr.cnrs.liris.simtole.protocols.NeedProtocol
+protocol.need.queryqueue_protocol queryqueue
+
+protocol.result fr.cnrs.liris.simtole.protocols.SemResultProtocol
+protocol.result.query_protocol query
+protocol.result.queryqueue_protocol queryqueue
+protocol.result.info_protocol infoLocal
+
+protocol.mapping fr.cnrs.liris.simtole.protocols.MappingProtocol
+protocol.mapping.queryqueue_protocol queryqueue
+protocol.mapping.result_protocol result
+protocol.mapping.info_protocol infoLocal
+
+protocol.infoLocal fr.cnrs.liris.simtole.protocols.InfoLocalProtocol
+
+protocol.cluster fr.cnrs.liris.simtole.protocols.SemClusterProtocol
+protocol.cluster.query_protocol query
+
+init.rnd peersim.dynamics.WireKOut
+init.rnd.protocol lnk
+init.rnd.k 1
+
+init.con fr.cnrs.liris.simtole.controls.OwlDistributionInitializer
+init.con.directory Ontologies
+
+init.map fr.cnrs.liris.simtole.controls.MappingsInitializer
+init.map.directory Reference-alignment
+
+simulneedinit.needinit fr.cnrs.liris.simtole.controls.NeedInitializer
+simulneedinit.needinit.need_protocol need
+simulneedinit.needinit.query_protocol query
+
+include.init rnd con map
+
+include.simulneedinit needinit
+
+control.owlo fr.cnrs.liris.simtole.OwlObserver
+control.owlo.query_protocol query
+control.owlo.queryqueue_protocol queryqueue
+control.owlo.result_protocol result
+control.owlo.info_protocol infoLocal
+
+control.writexml fr.cnrs.liris.simtole.owl.WriteXML
+control.writexml.info_protocol infoLocal
+control.writexml.query_protocol query
+control.writexml.queryqueue_protocol queryqueue
+

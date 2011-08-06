@@ -1,0 +1,58 @@
+control.shf peersim.cdsim.Shuffle 
+protocol.lnk peersim.core.IdleProtocol
+
+protocol.queryfile fr.cnrs.liris.simtole.QueryFileProtocol
+
+protocol.query fr.cnrs.liris.simtole.protocols.old.QueryProtocol2
+protocol.query.query_protocol queryfile
+protocol.query.result_protocol result
+protocol.query.info_protocol fr.cnrs.liris.simtole
+protocol.query.linkable lnk
+
+protocol.need fr.cnrs.liris.simtole.protocols.NeedProtocol
+protocol.need.protocol queryfile
+
+protocol.result fr.cnrs.liris.simtole.ResultProtocol
+protocol.result.query_protocol query
+protocol.result.query_file queryfile
+protocol.result.info_protocol fr.cnrs.liris.simtole
+
+protocol.mapping fr.cnrs.liris.simtole.protocols.MappingProtocol
+protocol.mapping.query_file queryfile
+
+protocol.infoLocal fr.cnrs.liris.simtole.protocols.InfoLocalProtocol
+
+protocol.cluster fr.cnrs.liris.simtole.ClusterProtocol
+protocol.cluster.query_protocol query
+
+init.rnd peersim.dynamics.WireKOut
+init.rnd.protocol lnk
+init.rnd.k 1
+
+init.con fr.cnrs.liris.simtole.owl.OwlDistributionInitializer
+init.con.protocol query
+init.con.directory generatedowl
+
+init.needinit fr.cnrs.liris.simtole.init.NeedInitializer
+init.needinit.protocol need
+init.needinit.protocol_query query
+
+init.genonto fr.cnrs.liris.simtole.init.OntOwlGenerator
+init.genonto.protocol lnk
+init.genonto.nbmaxconcepts 6
+init.genonto.nbfils 1
+init.genonto.nbAxiomes 1
+
+include.init rnd genonto con needinit
+
+control.owlo fr.cnrs.liris.simtole.owl.OwlObserver
+control.owlo.query_protocol query
+control.owlo.query_file queryfile
+control.owlo.result_protocol result
+control.owlo.info_protocol fr.cnrs.liris.simtole
+
+control.writexml fr.cnrs.liris.simtole.WriteXML
+control.writexml.info_protocol fr.cnrs.liris.simtole
+control.writexml.query_protocol query
+control.writexml.query_file queryfile
+

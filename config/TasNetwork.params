@@ -1,0 +1,10 @@
+simulName TasNetwork
+nbPeers 17
+nbQueries 0
+degree 6
+ttl 9
+topology Random
+dynamicNetwork false
+experimentByCycle true
+nbCycles 14
+protocols list_protocol

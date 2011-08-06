@@ -1,0 +1,10 @@
+simulName LANNetwork
+nbPeers 50
+nbQueries 0
+degree 2
+ttl 15
+topology Random
+dynamicNetwork false
+experimentByCycle true
+nbCycles 16
+protocols list_protocol

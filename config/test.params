@@ -1,0 +1,10 @@
+simulName test
+nbPeers 5
+nbQueries 3
+degree 4
+ttl 3
+topology Random
+dynamicNetwork false
+experimentByCycle true
+nbCycles 7
+protocols Q_P_without_K
