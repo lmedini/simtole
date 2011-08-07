@@ -5,7 +5,7 @@ import intersimul.model.experiment.ParamLoader;
 
 /**
  * Main class to run SimTole Application
- *
+ * Test Git
  * @author Nicolas Lumineau, Lionel Médini
  */
 public class SimToleMain {
